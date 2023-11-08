@@ -11,7 +11,11 @@ type User {
 type Project {
   _id: ID!
   name: String!
-  features: [String!]
+  features: [Feature]
+}
+
+type Feature {
+  name: String!
 }
 
 type Auth {
@@ -20,17 +24,18 @@ type Auth {
 }
 
 type Query {
-  projects: [Project]!
+  users: [User]!
+  projects(user: ID, name: String): [Project]!
 }
 
 type Mutation {
   addUser(name: String!, email: String!, password:String!, role: String!): Auth!
-  addProject(projects: ProjectInput!): Project!
+  addProject(userId: ID!, name: String!, features: [FeatureInput!]!): Project!
 }
 
-input ProjectInput {
+input FeatureInput {
   name: String!
-  description: String!
-}`;
+}
+`;
 
 module.exports = typeDefs;

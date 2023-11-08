@@ -3,6 +3,9 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
   Query: {
+    users: async () => {
+      return await User.find().populate('projects')
+    },
     projects: async (parent, args, context) => {
       if (context.user && context.user.role === 'ADMIN') {
         return await Project.find();
@@ -19,13 +22,18 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addProject: async (parent, { name }, context) => {
-      if (context.user) {
-        const project = new Project({ name });
-        await User.findByIdAndUpdate(context.user._id, { $push: { projects: project } });
+    addProject: async (parent, { userId, name, features }, ) => {
+      try {
+        const project = await Project.create({ name, features });
+        const user = await User.findById({ _id: userId });
+        if (!user) {
+          throw new Error('User not found');
+        }
+        user.projects.push(project);
+        await user.save();
         return project;
-      } else {
-        throw new AuthenticationError('User not authorized');
+      } catch (error) {
+        throw new Error(error);
       }
     },
   },
