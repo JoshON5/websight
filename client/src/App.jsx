@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 
-import Header from './components/Header';
+import Nav from './components/Nav';
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -14,7 +14,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+          <Nav />
           <div className="container">
             <Outlet />
           </div>
