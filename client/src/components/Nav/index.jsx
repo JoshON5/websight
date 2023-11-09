@@ -57,7 +57,7 @@ const Nav = () => {
           <a href="#" className="block py-2 pl-3 pr-4 text-webTeal rounded md:hover:bg-transparent md:border-0 md:hover:text-cyan-50 md:p-0 ">Contact</a>
         </li>
         <li>
-          <a href="#" className="block py-2 pl-3 pr-4 text-webTeal rounded md:hover:bg-text-webTeal hover:text-webGrey md:border-0 md:hover:text-cyan-50 md:p-0 ">Log in</a>
+          <a href="/login" className="block py-2 pl-3 pr-4 text-webTeal rounded md:hover:bg-text-webTeal hover:text-webGrey md:border-0 md:hover:text-cyan-50 md:p-0 ">Log in</a>
         </li>
       </ul>
     </div>
