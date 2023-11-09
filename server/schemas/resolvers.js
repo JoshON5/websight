@@ -1,4 +1,4 @@
-const { User, Project, } = require('../models');
+const { User, Project } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -10,7 +10,7 @@ const resolvers = {
     user: async (parent, args, context ) =>{
       console.log(context.user.role)
       if (context.user) {
-        return User.findOne({ _id: context.user._id}).populate('projects')
+        return User.findOne({ _id: context.user._id }).populate('projects')
       }
       throw AuthenticationError;
     },
