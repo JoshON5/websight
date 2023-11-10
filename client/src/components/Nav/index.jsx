@@ -1,6 +1,6 @@
 // import { Link } from 'react-router-dom';
 // import { Navbar } from 'flowbite-react';
-import Image from ('../../assets/websight.png')
+import Image from '../../assets/websight.png'
 
 
 // const Nav = () => {
