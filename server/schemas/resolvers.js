@@ -4,7 +4,6 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 const resolvers = {
   Query: {
     users: async () => {
-      console.log(context)
       return await User.find().populate('projects')
     },
     user: async (parent, args, context ) =>{
