@@ -1,6 +1,6 @@
 // import { Link } from 'react-router-dom';
 // import { Navbar } from 'flowbite-react';
-
+import Image from '../../assets/websight.png'
 
 
 // const Nav = () => {
@@ -36,7 +36,7 @@ const Nav = () => {
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <div className="">
     <a href="https://github.com/JoshON5/websight" className="flex items-center">
-        <img src="../src/assets/websight.png" className="h-12 mr-3" alt="WebSight Logo" />
+        <img src={Image} className="h-12 mr-3" alt="WebSight Logo" />
     </a>
     </div>
     <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
