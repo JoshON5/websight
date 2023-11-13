@@ -1,4 +1,4 @@
-import './index.css';
+// import './index.css';
 
 import { Outlet } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
