@@ -1,9 +1,16 @@
+import Image from './../assets/websight-icon.png'
+
 
 const Signup = () => {
     return (
 
-        <div className="flex w-screen min-h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-black">
+        <div className="flex w-screen min-h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-neutral-800">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <img
+                className="mx-auto h-10 w-auto"
+                src={Image}
+                alt="Your Company"
+              />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-webTeal">
             Create a Websight Account!
           </h2>
