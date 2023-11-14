@@ -20,7 +20,7 @@ const searchRepositories = (featureList) => {
   return octokit.request('GET /search/repositories?q=' + queryString, {
     headers: {
       'X-GitHub-Api-Version': '2022-11-28',
-    },
+    }
   });
 }
 
