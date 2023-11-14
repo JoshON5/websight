@@ -46,9 +46,9 @@ const resolvers = {
 
       return { token, user }
     },
-    addProject: async (parent, { userId, name, features }, ) => {
+    aaddProject: async (parent, { userId, name, features, description }, ) => {
       try {
-        const project = await Project.create({ name, features });
+        const project = await Project.create({ name, features, description });
         const user = await User.findById({ _id: userId });
         if (!user) {
           throw new Error('User not found');

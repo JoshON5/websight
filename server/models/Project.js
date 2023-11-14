@@ -7,6 +7,12 @@ const projectSchema = new Schema({
         maxlength: 280,
         trim: true,
     },
+    description: {
+        type: String,
+        minlength: 10,
+        maxlength: 280,
+        trim: true
+    },
     features: [
         {
             name: {
