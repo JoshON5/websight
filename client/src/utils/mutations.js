@@ -1,4 +1,6 @@
-export const LOGIN_USER = `#graphql
+import { gql } from '@apollo/client';
+
+export const LOGIN_USER = gql`
     mutation login($email: String!, $password: String!) {
         login(email: $email, password: $password) {
             token
@@ -10,7 +12,7 @@ export const LOGIN_USER = `#graphql
     }
 `;
 
-export const ADD_PROJECT = `#graphql
+export const ADD_PROJECT = gql`
   mutation addProject($userId: ID!, $name: String!, $features: [FeatureInput!]!) {
     addProject(userId: $userId, name: $name, features: $features) {
       id
@@ -23,14 +25,22 @@ export const ADD_PROJECT = `#graphql
   }
 `;
 
-export const ADD_USER = `#graphql
-mutation AddUser($name: String!, $email: String!, $password: String!, $role: String!) {
-  addUser(name: $name, email: $email, password: $password, role: $role) {
+export const ADD_USER = gql`
+  mutation addUser(
+    $name: String! 
+    $email: String! 
+    $password: String! 
+    $role: String!
+  ) {
+  addUser(
+    name: $name 
+    email: $email 
+    password: $password 
+    role: $role
+  ) {
     user {
-      id
+      _id
       name
-      email
-      role
     }
     token
   }

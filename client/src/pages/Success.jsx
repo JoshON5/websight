@@ -1,4 +1,4 @@
-const Sucess = () => {
+const Success = () => {
 
     return (
     <main>
@@ -9,4 +9,4 @@ const Sucess = () => {
     );
 };
 
-export default Sucess;
+export default Success;
