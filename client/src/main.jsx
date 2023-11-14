@@ -7,6 +7,8 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import ProjectForm from './pages/ProjectForm';
 import ErrorPage from './pages/ErrorPage';
+import DebugForm from './pages/DebugForm.jsx';
+import Dashboard from './pages/Dashboard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +31,15 @@ const router = createBrowserRouter([
       {
         path: '/projectform',
         element: <ProjectForm />
-      }
+      },
+      {
+        path: '/debugform',
+        element: <DebugForm />
+      },
+      {
+        path: '/Dashboard',
+        element: <Dashboard />
+      },
     ]
   },
 ]);
