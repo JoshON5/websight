@@ -10,6 +10,7 @@ type User {
 type Project {
   _id: ID!
   name: String!
+  description: String
   features: [Feature]
   remark: [Remark]
   accepted: Boolean
@@ -39,7 +40,7 @@ type Query {
 type Mutation {
   addUser(name: String!, email: String!, password: String!, role: String!): Auth
   login(email: String!, password: String!): Auth
-  addProject(userId: ID!, name: String!, features: [FeatureInput!]!): Project
+  addProject(userId: ID!, name: String!, description: String!, features: [FeatureInput!]!): Project
   addRemark(projectId: ID!, remarkText: String!): Project
 }
 
