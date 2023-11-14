@@ -1,5 +1,4 @@
 import Image from './../assets/websight-icon.png'
-
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
@@ -12,6 +11,7 @@ const Signup = () => {
     name: '',
     email: '',
     password: '',
+    role: 'CUSTOMER',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -60,7 +60,6 @@ const Signup = () => {
               </p>
             ) : (
           <form onSubmit={handleFormSubmit} className="space-y-6">
-
           <div>
               <label htmlFor="name" className="block text-sm font-medium leading-6 text-webTeal">
                 Name
