@@ -1,7 +1,61 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+
+import { ADD_PROJECT } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 const ProjectForm = () => {
+
+const [formState, setFormState] = useState({ 
+  userId: '',
+  name: '',
+  features: '', 
+  description: '', 
+});
+
+
+useEffect(() => {
+  const userProfile = Auth.getProfile()
+  setFormState({
+    ...formState,
+    userId: userProfile.data._id,
+  });
+}, []);
+
+const [addProject, { error }] = useMutation(ADD_PROJECT);
+
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+
+    try {
+      const { data } = await addProject({
+        variables: { ...formState },
+      });
+
+      setFormState('');
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
-    <form className="flex justify-center w-screen min-h-screen py-8">
+    <div>
+    {Auth.loggedIn() ? (
+    <>
+    
+    <form className="flex justify-center w-screen min-h-screen py-8" onSubmit={handleFormSubmit}>
       <div className="mx-auto">
         <h1 className="text-4xl font-semibold leading-7 text-webGrey">Submit a project proposal for review!</h1>
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -16,7 +70,8 @@ const ProjectForm = () => {
                     type="text"
                     name="name"
                     id="name"
-                    autoComplete="name"
+                    value={formState.name}
+                    onChange={handleChange}
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="My Project Name "
                   />
@@ -31,11 +86,12 @@ const ProjectForm = () => {
               <p className="mt-1 text-sm leading-6 text-gray-400">Please write a few sentences describing your project.</p>
               <div className="mt-2">
                 <textarea
-                  id="about"
-                  name="about"
+                  id="description"
+                  name="description"
                   rows={3}
+                  value={formState.description}
+                  onChange={handleChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-webTeal sm:text-sm sm:leading-6"
-                  defaultValue={''}
                 />
               </div>
             </div>
@@ -43,7 +99,7 @@ const ProjectForm = () => {
 
           <br />
 
-        <div className="border-b border-t border-gray-900/10 pt-2 pb-12">
+        <div className="border-t border-gray-900/10 pt-2 pb-12">
           <h2 className="text-lg font-semibold leading-7 text-gray-900">Features</h2>
           <p className=" text-sm leading-6 text-gray-400">
             Let us know what features you want to incorporate into your website!</p>
@@ -154,43 +210,9 @@ const ProjectForm = () => {
                     </label>
                   </div>
                 </div>
-
-
-
-
-
-
               </div>
             </fieldset>
 
-            <fieldset>
-              <legend className="text-sm font-semibold leading-6 text-gray-900">Do you Have a GitHub?</legend>
-              <p className="mt-1 text-sm leading-6 text-gray-600">Select below</p>
-              <div className="mt-6 space-y-6">
-                <div className="flex items-center gap-x-3">
-                  <input
-                    id="push-everything"
-                    name="push-notifications"
-                    type="radio"
-                    className="h-4 w-4 border-gray-300 text-webGrey focus:ring-webGrey"
-                  />
-                  <label htmlFor="push-everything" className="block text-sm font-medium leading-6 text-gray-900">
-                    Yes
-                  </label>
-                </div>
-                <div className="flex items-center gap-x-3">
-                  <input
-                    id="push-email"
-                    name="push-notifications"
-                    type="radio"
-                    className="h-4 w-4 border-gray-300 text-webGrey focus:ring-webGrey"
-                  />
-                  <label htmlFor="push-email" className="block text-sm font-medium leading-6 text-gray-900">
-                    No
-                  </label>
-                </div>
-              </div>
-            </fieldset>
           </div>
         </div>
         
@@ -206,6 +228,14 @@ const ProjectForm = () => {
 
         </div>
     </form>
+    </>
+    ) : (
+        <p>
+          You need to be logged in to submit a form. Please{' '}
+          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+        </p>
+      )}
+        </div>
   )
 };
 export default ProjectForm;
