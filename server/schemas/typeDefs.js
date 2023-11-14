@@ -3,7 +3,6 @@ type User {
   _id: ID!
   name: String!
   email: String!
-  password:String!
   role: String!
   projects: [Project]
 }
@@ -27,20 +26,20 @@ type Feature {
 }
 
 type Auth {
-  token: ID!
-  user: User!
+  token: ID
+  user: User
 }
 
 type Query {
-  users: [User]!
-  projects(user: ID, name: String): [Project]!
+  users: [User]
+  projects(user: ID, name: String): [Project]
   user: User
 }
 
 type Mutation {
-  addUser(name: String!, email: String!, password:String!, role: String!): Auth!
+  addUser(name: String!, email: String!, password: String!, role: String!): Auth
   login(email: String!, password: String!): Auth
-  addProject(userId: ID!, name: String!, features: [FeatureInput!]!): Project!
+  addProject(userId: ID!, name: String!, features: [FeatureInput!]!): Project
   addRemark(projectId: ID!, remarkText: String!): Project
 }
 
