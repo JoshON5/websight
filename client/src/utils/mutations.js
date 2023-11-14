@@ -13,13 +13,24 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_PROJECT = gql`
-  mutation addProject($userId: ID!, $name: String!, $features: [FeatureInput!]!) {
-    addProject(userId: $userId, name: $name, features: $features) {
-      id
-      name
-      features {
+   mutation addProject(
+    $userId: ID!, 
+    $name: String!,
+    $description: String!, 
+    $features: [FeatureInput!]!
+    ) {
+      addProject(
+      userId: $userId, 
+      name: $name, 
+      features: $features,
+      description: $description
+      ) {
         id
         name
+        description
+        features {
+          id
+          name
       }
     }
   }
