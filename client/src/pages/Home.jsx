@@ -1,4 +1,7 @@
 import Image from './../assets/websight-icon.png'
+import { Link } from 'react-router-dom';
+
+import Auth from '../utils/auth';
 
 const Home = () => {
 
@@ -80,13 +83,28 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-            
-                  <a
-                    href="/login"
+                  {Auth.loggedIn() ? (
+            <>
+              <span>{Auth.getProfile().data.username}</span>
+                  <Link
                     className="inline-block rounded-md border border-transparent bg-webTeal px-8 py-3 text-center font-medium text-white hover:bg-white hover:text-webGrey"
-                  >
+                    to="/dashboard">
+                    Go to your Dashboard!
+                  </Link>
+                  </>
+          ) : (
+            <>
+                              <Link
+                    className="inline-block rounded-md border border-transparent bg-webTeal px-8 py-3 text-center font-medium text-white hover:bg-white hover:text-webGrey"
+                    to="/login">
                     Get Started Now
-                  </a>
+                  </Link>
+                  </>
+                    )}
+
+
+
+
                 </div>
               </div>
             </div>
