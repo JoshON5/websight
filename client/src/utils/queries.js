@@ -1,4 +1,6 @@
-export const GET_USERS = `#graphql
+import { gql } from '@apollo/client'
+
+export const GET_USERS = gql`
   query GetUsers {
     users {
       _id
@@ -12,7 +14,7 @@ export const GET_USERS = `#graphql
         features {
           name
         }
-        remarks {
+        remark {
           _id
           remarkText
           remarkAuthor
@@ -21,4 +23,27 @@ export const GET_USERS = `#graphql
       }
     }
   }
+`
+export const GET_USER = gql`
+  query GetUser {
+  user {
+    _id
+    name
+    email
+    projects {
+      _id
+      name
+      description
+      features {
+        name
+      }
+      remark {
+        _id
+        remarkText
+        remarkAuthor
+      }
+      accepted
+    }
+  }
+}
 `

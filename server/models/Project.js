@@ -1,5 +1,16 @@
 const { Schema, model } = require('mongoose');
 
+const remarkSchema = new Schema({
+  remarkText: {
+    type: String,
+    minlength: 28,
+    maxlength: 280,
+  },
+  remarkAuthor: {
+    type: String,
+  },
+});
+
 const projectSchema = new Schema({
     name: {
         type: String,
@@ -22,15 +33,9 @@ const projectSchema = new Schema({
         }
     ],
     remark: {
-        remarkText: {
-            type: String,
-            minlength: 28,
-            maxlength: 280,
-        },
-        remarkAuthor: {
-            type: String,
-        }
-    },
+        type: [remarkSchema],
+        default: []
+      },
     accepted: {
         type: Boolean,
         default: false
