@@ -16,7 +16,7 @@ const UserProjects = () => {
   }
 
   const { user } = data;
-
+console.log('User: ', user)
   return (
 <div>
   <h2>Your Projects: </h2>
@@ -25,7 +25,7 @@ const UserProjects = () => {
       {user.projects.map((project) => (
         // Project card
         <div key={project._id} className="project-card border-4 m-3">
-                        <Link to={`/dashboard/${project._id}`}>
+                        <Link to={`/dashboard/${project._id}`} key={project._id}>
                 <h3>{project.name}</h3>
                 <p>{project.description}</p>
               </Link>
