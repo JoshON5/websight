@@ -13,6 +13,9 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    project: async (parent, { projectId }) => {
+      return Project.findOne({ _id: projectId })
+    },
     projects: async (parent, args, context) => {
       if (context.user && context.user.role === 'ADMIN') {
         return await Project.find();

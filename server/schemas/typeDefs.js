@@ -34,6 +34,7 @@ type Auth {
 
 type Query {
   users: [User]!
+  project(projectId: ID!): Project
   projects(user: ID, name: String): [Project]!
   user: User
 }
