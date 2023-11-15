@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 export const GET_USERS = gql`
-  query GetUsers {
+  query getUsers {
     users {
       _id
       name
@@ -26,7 +26,7 @@ export const GET_USERS = gql`
   }
 `
 export const GET_USER = gql`
-  query GetUser {
+  query getUser {
   user {
     _id
     name
@@ -48,4 +48,22 @@ export const GET_USER = gql`
     }
   }
 }
+`
+export const GET_PROJECT = gql`
+  query getProject($projectId: ID!) {
+    project(projectId: $projectId) {
+      _id
+      name
+      description
+      features {
+        name
+      }
+      remark {
+        _id
+        remarkText
+        remarkAuthor
+      }
+      accepted
+    }
+  }
 `

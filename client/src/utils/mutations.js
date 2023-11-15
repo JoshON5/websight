@@ -56,3 +56,15 @@ export const ADD_USER = gql`
   }
 }
 `;
+
+export const ADD_REMARK = gql`
+mutation addRemark($projectId: ID!, $remarkText: String!) {
+  addRemark(projectId: $projectId, remarkText: $remarkText) {
+    _id
+    remark {
+      remarkText
+      remarkAuthor
+    }
+  }
+}
+`;
