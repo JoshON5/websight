@@ -9,6 +9,8 @@ import ProjectForm from './pages/ProjectForm';
 import ErrorPage from './pages/ErrorPage';
 import SingleProject from './pages/SingleProject.jsx';
 import Dashboard from './pages/Dashboard.jsx';
+import About from './pages/About.jsx';
+import Services from './pages/Services.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Dashboard />
+      },
+      {
+        path: '/about',
+        element: <About />
+      },
+      {
+        path: '/services',
+        element: <Services />
       },
     ]
   },

@@ -20,7 +20,7 @@ const Dashboard = () => {
   if (user.role === 'ADMIN') {
     return (
         <div className="mx-auto pt-7 px-5">
-          <h1 className="text-4xl font-semibold leading-7 text-webGrey">Welcome to your Dashboard!</h1>
+          <h1 className="text-4xl font-semibold leading-7 text-webGrey">Welcome to your Dashboard {user.name}!</h1>
           <div>
           <AllProjects />
           </div>
@@ -29,7 +29,7 @@ const Dashboard = () => {
 } else {
   return (
     <div className="mx-auto pt-7 px-5">
-    <h1 className="text-4xl font-semibold leading-7 text-webGrey">Welcome to your Dashboard!</h1>
+    <h1 className="text-4xl font-semibold leading-7 text-webGrey">Welcome to your Dashboard {user.name}!</h1>
     <div>
     <UserProjects/>
     </div>
