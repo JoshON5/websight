@@ -1,5 +1,7 @@
 import Image1 from '../assets/shaffa.png';
-import Image2 from '../assets/websight-icon.png';
+import Image2 from '../assets/houston.jpg';
+import Image3 from '../assets/websight-icon.png';
+
 import { Link } from 'react-router-dom';
 
 
@@ -8,7 +10,7 @@ const people = [
       name: 'Houston Davis',
       role: 'Full Stack Web Developer',
       github: 'https://github.com/HDavis147',
-      about: 'About stuff',
+      about: 'Houston lives in Texas with his wife and two cats. He enjoys hiking and cooking for his family.',
       imageUrl: Image2    
     },
     {
@@ -16,13 +18,13 @@ const people = [
         role: 'Full Stack Web Developer',
         github: 'https://github.com/JoshON5',
         about: 'About stuff',
-        imageUrl: Image2
+        imageUrl: Image3
       },
       {
         name: 'Shaffa Chaudhry',
         role: 'Front End Web Developer',
         github: 'https://github.com/shaffachaudhry',
-        about: 'Making websites appear pleasing to the eye since 2023. Big fan of Tailwind!',
+        about: 'Making websites appear pleasing to the eye since 2023. Big fan of Tailwind and iced coffee (especially in the winter)!',
         imageUrl: Image1,
       },
   ]
@@ -41,7 +43,7 @@ const people = [
             {people.map((person) => (
               <li key={person.name}>
                 <div className="flex items-center gap-x-6">
-                  <img className="h-24 w-24 rounded-full" src={person.imageUrl} alt="" />
+                  <img className="h-24 w-24 rounded-full object-center object-cover" src={person.imageUrl} alt="" />
                   <div>
                     <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
                     <p className="text-sm font-semibold leading-6 text-webTeal">{person.role}</p>

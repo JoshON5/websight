@@ -10,6 +10,8 @@ import ErrorPage from './pages/ErrorPage';
 import SingleProject from './pages/SingleProject.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import About from './pages/About.jsx';
+import Services from './pages/Services.jsx';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: '/about',
         element: <About />
+      },
+      {
+        path: '/services',
+        element: <Services />
       },
     ]
   },
