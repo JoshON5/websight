@@ -33,10 +33,10 @@ console.log('User: ', user)
     <div>
       {user.projects.map((project) => (
         // Project card
-        <div key={project._id} className="project-card border-4 m-3">
+        <div key={project._id} className="project-card border-4 m-3 p-2 bg-webGrey border-webTeal">
                         <Link to={`/dashboard/${project._id}`} key={project._id}>
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
+                <h3 className='text-webGrey bg-gray-300 px-2 mb-1 text-lg font-semibold  hover:bg-webTeal'>{project.name}</h3>
+                <p className='text-gray-300 px-2'>{project.description}</p>
               </Link>
           {project.features.length > 0 && (
             <div className="features-card mx-2">

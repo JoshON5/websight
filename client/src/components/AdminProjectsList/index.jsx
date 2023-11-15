@@ -26,9 +26,10 @@ const AllProjects = () => {
           {user.projects.map((project) => (
             <div key={project._id} className="project-card border-4 m-3 p-2 bg-webGrey border-webTeal">
                             <Link to={`/dashboard/${project._id}`} key={project._id}>
-                <h3>Customer Name: {user.name}</h3>
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
+                <h3 className='text-webGrey bg-gray-300 px-2 mb-1 text-lg font-semibold  hover:bg-webTeal'>{project.name}</h3>
+                <h3 className='text-gray-300 px-2'>Customer Name: {user.name}</h3>
+                
+                <p className='text-gray-300 px-2'>{project.description}</p>
               </Link>
               <div className="features-card mx-3">
                 <h4 className='text-gray-300 underline'>Features: </h4>
