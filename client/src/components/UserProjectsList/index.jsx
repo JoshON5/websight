@@ -16,7 +16,7 @@ const UserProjects = () => {
   }
 
   const { user } = data;
-
+console.log('User: ', user)
   return (
 <div>
   <h2>Your Projects: </h2>
