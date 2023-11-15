@@ -1,6 +1,8 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_USER } from '../../utils/queries';
+import { Link } from 'react-router-dom';
+
 
 const UserProjects = () => {
   const { loading, error, data } = useQuery(GET_USER);
@@ -23,8 +25,10 @@ const UserProjects = () => {
       {user.projects.map((project) => (
         // Project card
         <div key={project._id} className="project-card border-4 m-3">
-          <h3>{project.name}</h3>
-          <p>{project.description}</p>
+                        <Link to={`/dashboard/${project._id}`}>
+                <h3>{project.name}</h3>
+                <p>{project.description}</p>
+              </Link>
           {project.features.length > 0 && (
             <div className="features-card mx-3">
               <h4>Features: </h4>
