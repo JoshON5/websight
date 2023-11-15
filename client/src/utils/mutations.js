@@ -25,11 +25,10 @@ export const ADD_PROJECT = gql`
       features: $features,
       description: $description
       ) {
-        id
+        _id
         name
         description
         features {
-          id
           name
       }
     }
