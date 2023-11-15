@@ -32,7 +32,9 @@ const RemarkForm = ({ projectId }) => {
   return (
     <div>
       <textarea value={remarkText} onChange={(e) => setRemarkText(e.target.value)} />
-      <button onClick={handleRemark}>Add Remark</button>
+      <div>
+      <button onClick={handleRemark} className='text-xl text-gray-900 bg-webTeal rounded p-2 hover:bg-webGrey hover:text-gray-200'>Add Remark</button>
+      </div>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
     </div>
