@@ -24,13 +24,11 @@ const projectSchema = new Schema({
     remark: {
         remarkText: {
             type: String,
-            required: true,
             minlength: 28,
             maxlength: 280,
         },
         remarkAuthor: {
             type: String,
-            required: true
         }
     },
     accepted: {
