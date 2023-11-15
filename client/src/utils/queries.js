@@ -31,6 +31,7 @@ export const GET_USER = gql`
     _id
     name
     email
+    role
     projects {
       _id
       name
