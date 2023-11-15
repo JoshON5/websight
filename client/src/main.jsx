@@ -9,7 +9,7 @@ import ProjectForm from './pages/ProjectForm';
 import ErrorPage from './pages/ErrorPage';
 import SingleProject from './pages/SingleProject.jsx';
 import Dashboard from './pages/Dashboard.jsx';
-
+import About from './pages/About.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Dashboard />
+      },
+      {
+        path: '/about',
+        element: <About />
       },
     ]
   },
