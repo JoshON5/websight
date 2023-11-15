@@ -26,7 +26,7 @@ const Nav = () => {
         <Link className="block py-2 pl-3 pr-4 text-webTeal rounded md:hover:bg-transparent md:border-0 md:hover:text-cyan-50 md:p-0" to="/services">Services</Link>
         </li>
         <li>
-        <Link  className="block py-2 pl-3 pr-4 text-webTeal rounded md:hover:bg-transparent md:border-0 md:hover:text-cyan-50 md:p-0" to="/about">Contact</Link>
+        <Link  className="block py-2 pl-3 pr-4 text-webTeal rounded md:hover:bg-transparent md:border-0 md:hover:text-cyan-50 md:p-0" to="mailto:info@websight.com">Contact</Link>
         </li>
         <li>
         {Auth.loggedIn() ? (
