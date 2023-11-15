@@ -11,6 +11,7 @@ export const GET_USERS = gql`
       projects {
         _id
         name
+        description
         features {
           name
         }

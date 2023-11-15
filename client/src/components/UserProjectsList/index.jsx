@@ -17,7 +17,7 @@ const UserProjects = () => {
 
   return (
 <div>
-  <h2>Your Projects</h2>
+  <h2>Your Projects: </h2>
   {user.projects.length > 0 ? (
     <div>
       {user.projects.map((project) => (
@@ -25,7 +25,6 @@ const UserProjects = () => {
         <div key={project._id} className="project-card border-4 m-3">
           <h3>{project.name}</h3>
           <p>{project.description}</p>
-
           {project.features.length > 0 && (
             <div className="features-card mx-3">
               <h4>Features: </h4>
