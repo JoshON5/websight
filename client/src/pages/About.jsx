@@ -1,6 +1,6 @@
 import Image1 from '../assets/shaffa.png';
 import Image2 from '../assets/houston.jpg';
-import Image3 from '../assets/websight-icon.png';
+import Image3 from '../assets/josh.png';
 
 import { Link } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ const people = [
         name: 'Joshua Nichols',
         role: 'Full Stack Web Developer',
         github: 'https://github.com/JoshON5',
-        about: 'About stuff',
+        about: "Hey, I'm Joshua Nichols! I'm a full-stack web developer that loves to collect vinyl. I'm ready to find innovative solutions to your unique ideas.",
         imageUrl: Image3
       },
       {
