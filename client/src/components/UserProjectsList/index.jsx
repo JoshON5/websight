@@ -19,7 +19,16 @@ const UserProjects = () => {
 
   return (
 <div className='mt-6'> 
-  <h2 className='text-3xl font-bold text-webTeal'>Your Projects: </h2>
+<p className='mt-10 p-6 text-center text-3xl text-gray-500'>Create a new project {' '} 
+                            <Link
+                            to='/projectform'
+                            className='font-semibold leading-6 text-webTeal hover:text-webGrey'
+                        >
+                            {' '}
+                            Here!
+                        </Link>
+                        </p>
+  <h2 className='text-3xl font-bold text-webTeal'>Your Project Submissions: </h2>
   {user.projects.length > 0 ? (
     <div>
       {user.projects.map((project) => (
@@ -41,6 +50,7 @@ const UserProjects = () => {
           )}
         </div>
       ))}
+
     </div>
   ) : (
     <p className='mt-10 text-center text-3xl text-gray-500'>No projects found. Create a new project {' '} 

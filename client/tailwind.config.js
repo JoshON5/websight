@@ -9,7 +9,10 @@ export default {
     extend: {
       colors: {
         'webTeal': '#63A0A6',
-        'webGrey': '#474B4D'
+        'webGrey': '#474B4D',
+      },
+      backgroundImage: {
+        'hero': "url('./assets/hero.png')",
       }
     },
   },
