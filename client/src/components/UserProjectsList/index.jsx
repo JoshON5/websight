@@ -54,13 +54,13 @@ console.log('User: ', user)
     </div>
   ) : (
     <p className='mt-10 text-center text-3xl text-gray-500'>No projects found. Create a new project {' '} 
-                            <Link
+                            {/* <Link
                             to='/projectform'
                             className='font-semibold leading-6 text-webTeal hover:text-webGrey'
                         >
                             {' '}
                             Here!
-                        </Link>
+                        </Link> */}
                         </p>
   )}
 </div>

@@ -61,7 +61,10 @@ const SingleProject = () => {
                   <dt className="text-lg font-medium leading-6 text-webTeal">Features</dt>
                   {/* <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">margotfoster@example.com</dd> */}
                   <dd className="mt-1 text-m leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                  {project.features.map(async (feature) => {
+                  {project.features.map((feature) => (
+                    <li className='list-none' key={feature.name}>{feature.name}</li>
+                  ))}
+                  {/* {project.features.map(async (feature) => {
                                     const octokit = new Octokit({
                                       auth: process.env.OCTOTOKEN
                                     });
@@ -78,7 +81,7 @@ const SingleProject = () => {
                                             {feature.name}: { links }
                                         </li>
                                     );
-                  })}
+                  })} */}
                 </dd>
                 </div>
       
