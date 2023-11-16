@@ -13,7 +13,7 @@ const questions = [
         answer: 'Cost will be based on work load. Once your project is approved, our team will reach out to you to discuss further.'
       },
       {
-        faq: 'What if I dont like my website',
+        faq: 'What if I dont like my website?',
         answer: 'sorry'
       },
   ]
