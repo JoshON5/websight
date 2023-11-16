@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 import { GET_USER, GET_PROJECT } from '../utils/queries';
 import RemarkForm from '../components/Remark';
 import { Link } from 'react-router-dom';
+import { Octokit } from '@octokit/core';
 
 const SingleProject = () => {
   const { projectId } = useParams();
@@ -60,9 +61,24 @@ const SingleProject = () => {
                   <dt className="text-lg font-medium leading-6 text-webTeal">Features</dt>
                   {/* <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">margotfoster@example.com</dd> */}
                   <dd className="mt-1 text-m leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                  {project.features.map((feature) => (
-                    <li className='list-none' key={feature.name}>{feature.name}</li>
-                  ))}
+                  {project.features.map(async (feature) => {
+                                    const octokit = new Octokit({
+                                      auth: process.env.OCTOTOKEN
+                                    });
+                                    const query = feature.name.replace(/\s/g, '+');
+                                    const response = await octokit.request('GET /search/repositories?q=' + query + '+in:readme&order=desc&per_page=5', {
+                                      headers: {
+                                        'X-GitHub-Api-Version': '2022-11-28',
+                                      },
+                                    });
+                                    const data = response.data;
+                                    const links = data.items.html_url
+                                    return (
+                                        <li className='list-none' key={feature.name}>
+                                            {feature.name}: { links }
+                                        </li>
+                                    );
+                  })}
                 </dd>
                 </div>
       
