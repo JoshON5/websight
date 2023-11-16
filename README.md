@@ -1,28 +1,34 @@
 # Websight
-[![License Badge](https://img.shields.io/badge/License-MIT-purple)](https://mit-license.org)
+Websight is a startup company specializing in the creation of websites for our client base. Clients can initiate the website creation process by creating an account, filling out a form, submitting it, and awaiting review by the admin.
 
-## Heroku Link
-Heroku: https://magnifi-6c0024370b61.herokuapp.com/
+## Deployed URL
+http://www.web-sight.us/
 
 ## Table of Contents
 - [Description](#description)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
-- [Contact](#contact)
- 
+- [Contributors](#contributors)
+  
 ## Description
-  This website is a place for users to submit their unique website ideas, and allow the WebSight team to review them, leave remarks, and build the website as requested. 
+Websight provides a platform for clients to easily request and obtain customized websites. The process involves clients submitting a form, and the admin reviewing the request to proceed with the website creation.
 
 ## Usage
-  Create an account, and submit your project form including details such as a description, name, and requested features. The WebSight team will review your request and leave remarks. 
-
-## Credits
-  Shaffa Chaudhry, Houston Davis, and Joshua Nichols 
-
+1. **Client Form Submission:**
+   - Clients need to create an account to fill out the provided form with details about their website requirements.
+   - Submit the form to initiate the website creation process.
+2. **Admin Review:**
+   - Admin will review the submitted form and assess the client's requirements.
+3. **Website Creation:**
+   - Upon admin approval, the website creation process begins.
+4. **Client Notification:**
+   - Clients will be notified about the progress and completion of their website.
+     
 ## License
-  For more info about this License go to https://mit-license.org
+This project is licensed under the [Apache License](LICENSE).
 
-## Contact
-  You can contact us through:
-  GitHub: [SHAFFA](https://github.com/shaffachaudhry), [HOUSTON](https://github.com/HDavis147), [JOSH](https://github.com/JoshON5)
+## Contributors
+Websight acknowledges the contributions of the following team members:
+- [Houston Davis](https://github.com/HDavis147)
+- [Shaffa Chaudhry](https://github.com/shaffachaudhry)
+- [Josh Nichols](https://github.com/JoshON5)
