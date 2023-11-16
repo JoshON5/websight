@@ -1,4 +1,3 @@
-import React from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_USERS } from '../../utils/queries';
 import { Link } from 'react-router-dom';
